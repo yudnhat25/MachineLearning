@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Analytics - Deep Learning Employee Attrition Prediction</title>
+    <meta name="description"
+        content="Dự án Deep Learning dự đoán tỷ lệ nghỉ việc nhân viên sử dụng Neural Networks và RAG Chatbot">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🧠</span>
+                <span class="logo-text">HR Analytics AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">Tổng Quan</a></li>
+                <li><a href="#methodology" class="nav-link">Phương Pháp</a></li>
+                <li><a href="#results" class="nav-link">Kết Quả</a></li>
+                <li><a href="#chatbot" class="nav-link">Chatbot</a></li>
+                <li><a href="#team" class="nav-link">Nhóm</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🎓</span>
+                    <span>Deep Learning Research Project</span>
+                </div>
+                <h1 class="hero-title">
+                    Dự Đoán Tỷ Lệ Nghỉ Việc<br>
+                    <span class="gradient-text">Sử Dụng Deep Learning</span><br>
+                    Và RAG Chatbot
+                </h1>
+                <p class="hero-subtitle">
+                    Ứng dụng Neural Networks, Clustering và Retrieval-Augmented Generation<br>
+                    để phân tích và dự đoán hành vi nghỉ việc của nhân viên
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10,000</div>
+                        <div class="stat-label">Employee Records</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Clusters</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#methodology" class="btn btn-primary">
+                        <span>Xem Chi Tiết</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#chatbot" class="btn btn-secondary">
+                        <span>Thử Chatbot</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tổng Quan Dự Án</h2>
+                <p class="section-subtitle">
+                    Xây dựng hệ thống hoàn chỉnh từ xử lý dữ liệu đến triển khai chatbot AI
+                </p>
+            </div>
+            <div class="overview-grid overview-grid-2x2">
+                <div class="overview-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Mục Tiêu</h3>
+                    <p>Dự đoán khả năng nghỉ việc của nhân viên để doanh nghiệp chủ động xây dựng chính sách giữ chân
+                        nhân tài và tối ưu hóa nguồn lực</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Dữ Liệu</h3>
+                    <p>10,000 bản ghi nhân sự giả lập với 78 features sau encoding, bao gồm thông tin về hiệu suất,
+                        lương, hài lòng và nhiều yếu tố khác</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Phương Pháp</h3>
+                    <p>Multi-Layer Perceptron (MLP) với Dropout, Batch Normalization, L2 Regularization và
+                        Autoencoder + KMeans Clustering</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Chatbot RAG</h3>
+                    <p>Hệ thống chatbot sử dụng Retrieval-Augmented Generation để trả lời câu hỏi về nhân sự dựa trên
+                        knowledge base</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="section methodology-section" id="methodology">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quy Trình Nghiên Cứu</h2>
+                <p class="section-subtitle">
+                    8 bước từ xác định vấn đề đến triển khai hệ thống
+                </p>
+            </div>
+            <div class="methodology-timeline">
+                <!-- Step 1 -->
+                <div class="timeline-item" data-step="1">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">1</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 1</div>
+                        <h3>Xác Định Vấn Đề</h3>
+                        <p class="timeline-description">
+                            Định nghĩa bài toán dự đoán khả năng nghỉ việc của nhân viên để xây dựng chiến lược giữ
+                            chân nhân tài
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item" data-step="2">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">2</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 2</div>
+                        <h3>Xây Dựng & Tiền Xử Lý Dữ Liệu</h3>
+                        <p class="timeline-description">
+                            Tạo 10,000 bản ghi giả lập với Faker, encoding biến phân loại, chuẩn hóa với
+                            StandardScaler, xử lý class imbalance
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Faker</span>
+                            <span class="tech-tag">StandardScaler</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item" data-step="3">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">3</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 3</div>
+                        <h3>Exploratory Data Analysis</h3>
+                        <p class="timeline-description">
+                            Phân tích phân bố attrition (19.6%), tương quan giữa các biến, visualizations về
+                            satisfaction, KPI, salary
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Seaborn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item" data-step="4">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">4</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 4</div>
+                        <h3>Phân Cụm Nhân Viên</h3>
+                        <p class="timeline-description">
+                            Sử dụng Autoencoder để giảm chiều dữ liệu xuống 3D, sau đó áp dụng KMeans clustering (k=3)
+                            dựa trên Elbow và Silhouette
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Autoencoder</span>
+                            <span class="tech-tag">KMeans</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item" data-step="5">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">5</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 5</div>
+                        <h3>Huấn Luyện Mô Hình Deep Learning</h3>
+                        <p class="timeline-description">
+                            Xây dựng MLP với 3 hidden layers (128-64-32), LeakyReLU, Dropout (0.4-0.5), Batch
+                            Normalization, L2 Regularization
+                        </p>
+                        <div class="timeline-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Architecture:</span>
+                                <span>Input → 128 → 64 → 32 → 1 (Sigmoid)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Optimizer:</span>
+                                <span>Adam (lr=0.0001)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Loss:</span>
+                                <span>Binary Crossentropy</span>
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">EarlyStopping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-item" data-step="6">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">6</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 6</div>
+                        <h3>Huấn Luyện Mô Hình Chuyên Gia</h3>
+                        <p class="timeline-description">
+                            Xây dựng MLPClassifier riêng cho từng cluster với SMOTE để cân bằng dữ liệu, tối ưu hiệu
+                            suất cho từng nhóm
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">MLPClassifier</span>
+                            <span class="tech-tag">SMOTE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="timeline-item" data-step="7">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">7</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 7</div>
+                        <h3>Đánh Giá & Tối Ưu</h3>
+                        <p class="timeline-description">
+                            Đánh giá mô hình với Accuracy, Recall, F1-Score, ROC-AUC. Tối ưu threshold dựa trên
+                            Precision-Recall curve
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="timeline-item" data-step="8">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">8</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 8</div>
+                        <h3>Triển Khai RAG Chatbot</h3>
+                        <p class="timeline-description">
+                            Xây dựng chatbot sử dụng Retrieval-Augmented Generation để truy vấn thông tin nhân sự từ
+                            knowledge base
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">Vector DB</span>
+                            <span class="tech-tag">LLM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results-section" id="results">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hiệu Suất Mô Hình</h2>
+                <p class="section-subtitle">
+                    Đánh giá chi tiết accuracy, recall, F1-score trên tập test
+                </p>
+            </div>
+
+            <!-- Overall Model Performance -->
+            <div class="results-chart-container">
+                <div class="chart-header">
+                    <h3>Hiệu Suất Mô Hình Tổng Thể</h3>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-value">75.0%</div>
+                        <div class="metric-label">Overall Accuracy</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="metric-icon">🔍</div>
+                        <div class="metric-value">66%</div>
+                        <div class="metric-label">Recall (Attrition=1)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⚖️</div>
+                        <div class="metric-value">0.51</div>
+                        <div class="metric-label">F1-Score (Attrition=1)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📊</div>
+                        <div class="metric-value">0.84</div>
+                        <div class="metric-label">ROC-AUC</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cluster Performance -->
+            <div class="cluster-results">
+                <h3>Hiệu Suất Theo Từng Cluster</h3>
+                <div class="cluster-grid">
+                    <div class="cluster-card">
+                        <div class="cluster-header">
+                            <h4>Cluster 0</h4>
+                            <span class="cluster-badge">Nhóm Kinh Doanh</span>
+                        </div>
+                        <div class="cluster-stats">
+                            <div class="cluster-stat">
+                                <span class="stat-label">Accuracy:</span>
+                                <span class="stat-value">67.4%</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-label">Recall (Leave):</span>
+                                <span class="stat-value">56.4%</span>
+                            </div>
+                        </div>
+                        <p class="cluster-description">Phòng KH Cá nhân (29.2%), KH Doanh nghiệp (22.5%), Giao dịch
+                            (17.7%)</p>
+                        <div class="cluster-features">
+                            <strong>Top Features:</strong> YearsSinceLastPromotion, JobSatisfaction, JobLevel
+                        </div>
+                    </div>
+
+                    <div class="cluster-card">
+                        <div class="cluster-header">
+                            <h4>Cluster 1</h4>
+                            <span class="cluster-badge">Nhóm Vận Hành</span>
+                        </div>
+                        <div class="cluster-stats">
+                            <div class="cluster-stat">
+                                <span class="stat-label">Accuracy:</span>
+                                <span class="stat-value">70.9%</span>
+                            </div>
+                            <div class="cluster-stat highlight">
+                                <span class="stat-label">Recall (Leave):</span>
+                                <span class="stat-value">67.97%</span>
+                            </div>
+                        </div>
+                        <p class="cluster-description">Giao dịch (28.7%), Hỗ trợ Tín dụng (28.4%), KH Cá nhân (12.9%)
+                        </p>
+                        <div class="cluster-features">
+                            <strong>Top Features:</strong> Cluster, JobSatisfaction, MonthlyIncome
+                        </div>
+                    </div>
+
+                    <div class="cluster-card">
+                        <div class="cluster-header">
+                            <h4>Cluster 2</h4>
+                            <span class="cluster-badge">Nhóm Chuyên Gia</span>
+                        </div>
+                        <div class="cluster-stats">
+                            <div class="cluster-stat">
+                                <span class="stat-label">Accuracy:</span>
+                                <span class="stat-value">78.2%</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-label">Recall (Leave):</span>
+                                <span class="stat-value">69.5%</span>
+                            </div>
+                        </div>
+                        <p class="cluster-description">KH Doanh nghiệp (37.9%), KH Cá nhân (36.4%)</p>
+                        <div class="cluster-features">
+                            <strong>Top Features:</strong> JobSatisfaction, YearsAtCompany, KPI_Achievement_Pct
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="insights-section">
+                <h3>Những Phát Hiện Quan Trọng</h3>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-icon">💡</div>
+                        <h4>Recall Cao Cho Lớp "Leave"</h4>
+                        <p>Mô hình đạt 66% recall, có khả năng phát hiện tốt các trường hợp nghỉ việc - mục tiêu quan
+                            trọng nhất trong quản trị nhân sự</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">🎯</div>
+                        <h4>Threshold Tối Ưu</h4>
+                        <p>Ngưỡng phân loại được tối ưu hóa tại 0.554 (thay vì 0.5 mặc định) để tối đa hóa F1-Score
+                        </p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">📊</div>
+                        <h4>Phân Cụm Hiệu Quả</h4>
+                        <p>KMeans với k=3 cho kết quả tốt nhất (Silhouette ~0.32), giúp xây dựng chính sách nhân sự
+                            phù hợp cho từng nhóm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section class="section chatbot-section" id="chatbot">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">HR Chatbot với RAG</h2>
+                <p class="section-subtitle">
+                    Hệ thống Retrieval-Augmented Generation để truy vấn thông tin nhân sự
+                </p>
+            </div>
+
+            <div class="chatbot-explanation">
+                <div class="explanation-card">
+                    <h3>Kiến Trúc RAG</h3>
+                    <div class="rag-flow">
+                        <div class="rag-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Tiếp Nhận Truy Vấn</h4>
+                                <p>Người dùng gửi câu hỏi về nhân sự</p>
+                            </div>
+                        </div>
+                        <div class="rag-arrow">→</div>
+                        <div class="rag-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Mã Hóa & Truy Xuất</h4>
+                                <p>Chuyển đổi thành vector, tìm kiếm trong knowledge base</p>
+                            </div>
+                        </div>
+                        <div class="rag-arrow">→</div>
+                        <div class="rag-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Sinh Văn Bản</h4>
+                                <p>LLM tạo phản hồi dựa trên ngữ cảnh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chatbot-features">
+                    <h3>Tính Năng Chatbot</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Truy vấn thông tin nhân viên theo tên, ID, phòng ban</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Phân tích chính sách công ty, quy định nội bộ</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Hỗ trợ câu hỏi về phúc lợi, đào tạo, thăng tiến</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Dự đoán xác suất nghỉ việc của nhân viên</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-note">
+                <p><strong>Lưu ý:</strong> Chatbot sử dụng knowledge base gồm 10,000+ hồ sơ nhân viên và vector
+                    database để truy xuất thông tin chính xác</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-subtitle">
+                    Công nghệ và thư viện được sử dụng trong dự án
+                </p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">📊</span>
+                        Data Processing
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Pandas</span>
+                        <span class="tech-tag-item">NumPy</span>
+                        <span class="tech-tag-item">Faker</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🧠</span>
+                        Deep Learning
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">TensorFlow</span>
+                        <span class="tech-tag-item">Keras</span>
+                        <span class="tech-tag-item">PyTorch</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🤖</span>
+                        Machine Learning
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Scikit-learn</span>
+                        <span class="tech-tag-item">SMOTE</span>
+                        <span class="tech-tag-item">KMeans</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">💬</span>
+                        RAG & LLM
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Vector DB</span>
+                        <span class="tech-tag-item">Embeddings</span>
+                        <span class="tech-tag-item">LLM</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🎨</span>
+                        Visualization
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Matplotlib</span>
+                        <span class="tech-tag-item">Seaborn</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🚀</span>
+                        Development
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Jupyter</span>
+                        <span class="tech-tag-item">VS Code</span>
+                        <span class="tech-tag-item">Python 3.10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nhóm 7 - ML Cuối Kỳ</h2>
+                <p class="section-subtitle">
+                    Dự án nghiên cứu Deep Learning trong phân tích HR
+                </p>
+            </div>
+            <div class="team-info">
+                <div class="info-card">
+                    <h3>Thông Tin Dự Án</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">Môn học:</span>
+                            <span class="info-value">Machine Learning</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Học kỳ:</span>
+                            <span class="info-value">Cuối Kỳ 2025-2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Nhóm:</span>
+                            <span class="info-value">Nhóm 7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HR Analytics Deep Learning</h3>
+                    <p>Dự án nghiên cứu ứng dụng Deep Learning và RAG trong phân tích nguồn nhân lực</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Dự Án</h4>
+                    <ul class="footer-links">
+                        <li><a href="#overview">Tổng Quan</a></li>
+                        <li><a href="#methodology">Phương Pháp</a></li>
+                        <li><a href="#results">Kết Quả</a></li>
+                        <li><a href="#chatbot">Chatbot</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Thống Kê</h4>
+                    <div class="footer-stats">
+                        <div class="footer-stat">
+                            <div class="stat-number">10,000</div>
+                            <div class="stat-label">Employee Records</div>
+                        </div>
+                        <div class="footer-stat">
+                            <div class="stat-number">75%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ML Nhóm 7 - Deep Learning HR Analytics. Made with ❤️ for HR Management.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
