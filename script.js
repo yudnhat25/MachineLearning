@@ -202,3 +202,4 @@ document.querySelectorAll('.timeline-item').forEach(item => {
 console.log('%c🧠 HR Analytics Deep Learning Project', 'color: #4a90e2; font-size: 20px; font-weight: bold;');
 console.log('%cNhóm 7 - ML Cuối Kỳ 2025-2026', 'color: #5563d1; font-size: 14px;');
 console.log('%cDeep Learning Employee Attrition Prediction with RAG Chatbot', 'color: #2d3748; font-size: 12px;');
+
